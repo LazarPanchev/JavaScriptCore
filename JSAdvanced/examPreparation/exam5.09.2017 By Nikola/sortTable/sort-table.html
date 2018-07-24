@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sort Table</title>
+    <link rel="stylesheet" href="sort-table.css"/>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<h1>Sort Table</h1>
+<table id="products">
+    <thead>
+    <tr>
+        <th>Name <a href="javascript:sort(0, false)">&#x25B2;</a> <a
+                href="javascript:sort(0, true)">&#x25BC;</a></th>
+        <th>Price <a href="javascript:sort(1, false)">&#x25B2;</a> <a
+                href="javascript:sort(1, true)">&#x25BC;</a></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Potatoes</td>
+        <td>0.89</td>
+    </tr>
+    <tr>
+        <td>Tomatoes</td>
+        <td>2.30</td>
+    </tr>
+    <tr>
+        <td>Bananas</td>
+        <td>1.79</td>
+    </tr>
+    </tbody>
+</table>
+<script>
+    function sort(colIndex, descending) {
+        let namesAndPrices=$('table#products tbody tr');
+        if(colIndex===0){
+            if(!descending) {
+                namesAndPrices
+                    .sort((a,b)=>$(a).children()[0].textContent
+                        .localeCompare($(b).children()[0].textContent));
+            }else {
+                namesAndPrices
+                    .sort((a,b)=>$(b).children()[0].textContent
+                        .localeCompare($(a).children()[0].textContent));
+            }
+        }else {
+            if(!descending){
+                namesAndPrices
+                    .sort((a,b)=>$(a).children()[1].textContent-($(b).children()[1].textContent));
+            }else {
+                namesAndPrices
+                    .sort((a,b)=>$(b).children()[1].textContent-($(a).children()[1].textContent));
+            }
+        }
+        $('tbody').append(namesAndPrices)
+    }
+</script>
+</body>
+</html>

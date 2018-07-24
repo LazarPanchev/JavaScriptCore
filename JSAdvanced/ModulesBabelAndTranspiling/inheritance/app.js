@@ -1,0 +1,16 @@
+let Entity=require('./entity.js');
+let Dog=require('./dog.js');
+let Person=require('./person.js');
+let Student=require('./student.js');
+// let entity=new Entity('currentObj');
+// let dog=new Dog('Rex');
+// let dog2=new Dog('Sara');
+// let person=new Person('Lazar','opa lqqq',dog);
+// let student=new Student('Ivo','Tuk sum',dog2,23237);
+// console.log(dog);
+// console.log(person);
+// console.log(student);
+result.Entity=Entity;
+result.Dog=Dog;
+result.Person=Person;
+result.Student=Student;

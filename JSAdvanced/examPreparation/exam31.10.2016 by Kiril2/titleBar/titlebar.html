@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Titlebar</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"
+            integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+            crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="titleBar.css">
+    <script src="titleBar.js"></script>
+</head>
+<body>
+<div id="container"></div>
+<script>
+    $(document).ready(function () {
+        let header = new TitleBar('Title Bar Problem');
+        header.addLink('/', 'Home');
+        header.addLink('about', 'About');
+        header.addLink('results', 'Results');
+        header.addLink('faq', 'FAQ');
+        header.appendTo('#container');
+    })
+</script>
+</body>
+</html>
