@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>-->
+    <script src="../../node_modules/handlebars/dist/handlebars.min.js"></script>
+</head>
+<body>
+<script id="person-partial" type="text/x-handlebars-template">
+    <div class="person">
+        <h2>{{name}}</h2>
+        <div>{{phone}}</div>
+    </div>
+</script>
+<script id="people-template" type="text/x-handlebars-template">
+    {{#each people}}
+    {{> person}}
+    {{/each}}
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        let template = Handlebars.compile($("#people-template").html());
+        Handlebars.registerPartial("person", $('#person-partial').html());
+        let data = {
+            people: [
+                {name: "Pesho", phone: "0889787889"},
+                {name: "Bob", phone: "0889788899"},
+                {name: "Charles", phone: "0891327889"},
+                {name: "Vivian", phone: "0889787300"},
+            ]
+        };
+        let resultHtml = template(data);
+        $('body').append(resultHtml);
+    })
+</script>
+</body>
+</html>

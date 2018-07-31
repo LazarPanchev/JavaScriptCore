@@ -1,0 +1,9 @@
+<ul>
+    {{#each contacts}}
+        {{#if phone}}
+            <li>{{name}}: {{email}}: {{phone}}</li>
+        {{else}}
+        <li>{{name}}: {{email}}</li>
+        {{/if}}
+    {{/each}}
+</ul>
