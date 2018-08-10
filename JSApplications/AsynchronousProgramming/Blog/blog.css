@@ -1,0 +1,22 @@
+#btnLoadPosts{
+     background: coral;
+     padding: 5px;
+ }
+#btnViewPost{
+    background: green;
+    padding: 3px;
+}
+h1{
+    margin-left: 200px;
+    dominant-baseline: central;
+    font-style: italic;
+}
+h2{
+    margin-left: 200px;
+    dominant-baseline: central;
+    font-style: italic;
+}
+li{
+    text-align: left;
+    color: aqua;
+}
